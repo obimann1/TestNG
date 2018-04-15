@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Alert;
 
 
 public class MyTestNG {
@@ -48,8 +49,22 @@ public class MyTestNG {
     }
 	
 	@Test(priority=2)
-	public void AddNewCustomer(){
+	public void AddNewCustomer() throws InterruptedException{
 	  driver.findElement(By.xpath("//a[contains(text(),\"New Customer\")]")).click();
+	  
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//a[contains(text(),'New Customer')]")).click();
+	  driver.findElement(By.xpath("//input[@name='name']")).sendKeys("Mrs James Thomas");
+	  driver.findElement(By.xpath("//input[@value='f']")).click();
+	  driver.findElement(By.xpath("//input[@name='dob']")).sendKeys("02211991");
+	  driver.findElement(By.xpath("//textarea[@name='addr']")).sendKeys("103-624 Agnes Street");
+	  driver.findElement(By.xpath("//input[@name='city']")).sendKeys("New Westminster");
+	  driver.findElement(By.xpath("//input[@name='state']")).sendKeys("British Columbia");
+	  driver.findElement(By.xpath("//input[@name='pinno']")).sendKeys("V4E 5J2");
+	  driver.findElement(By.xpath("//input[@name='telephoneno']")).sendKeys("604 589 9456");
+	  driver.findElement(By.xpath("//input[@name='emailid']")).sendKeys("emailid@gmail.com");
+	  driver.findElement(By.xpath("//input[@name='password']")).sendKeys("password");
+	  //driver.findElement(By.xpath("//input[@name='sub']")).click();
 	  String expectedUrl = "http://www.demo.guru99.com/V4/manager/addcustomerpage.php";
 	  String actualUrl = driver.getCurrentUrl();
 	  Assert.assertEquals(actualUrl, expectedUrl);
@@ -58,11 +73,17 @@ public class MyTestNG {
 	
 
 	@Test(priority=3)
-	public void Quit(){
+	public void Quit() throws InterruptedException{
 		driver.navigate().back();
 		driver.findElement(By.xpath("//a[contains(text(),\"Log out\")]")).click();
+		Alert al =driver.switchTo().alert();
+		String alertmessage=al.getText();
+		System.out.println("This is the message from alert box" +  "\t" + alertmessage);
+		al.accept();
+		//al.dismiss();
+		Thread.sleep(4000);
 		String actualLogOutUrl = driver.getCurrentUrl();
-		String expectedLogOutUrl = "http://http://www.demo.guru99.com/V4/manager/Logout.php";
+		String expectedLogOutUrl = "http://www.demo.guru99.com/V4/index.php";
 		Assert.assertEquals(actualLogOutUrl,expectedLogOutUrl);
 		System.out.println("Test Case 4 passed. User was able to successfully LogOut");
 	}
