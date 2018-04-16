@@ -5,7 +5,7 @@
     <classes>
       <class name="SundayPackage.MyTestNG">
         <methods>
-          <include name="Quit"/>
+          <include name="LogOut"/>
           <include name="setUpbrowserFirst"/>
         </methods>
       </class> <!-- SundayPackage.MyTestNG -->

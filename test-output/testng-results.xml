@@ -1,29 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="1" ignored="0" total="5" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26392" started-at="2018-04-15T14:29:14Z" finished-at="2018-04-15T14:29:40Z">
+  <suite name="Default suite" duration-ms="19891" started-at="2018-04-16T05:31:25Z" finished-at="2018-04-16T05:31:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="26392" started-at="2018-04-15T14:29:14Z" finished-at="2018-04-15T14:29:40Z">
+    <test name="Default test" duration-ms="19891" started-at="2018-04-16T05:31:25Z" finished-at="2018-04-16T05:31:45Z">
       <class name="SundayPackage.MyTestNG">
-        <test-method status="PASS" signature="setUpbrowserFirst()[pri:0, instance:SundayPackage.MyTestNG@4493d195]" name="setUpbrowserFirst" is-config="true" duration-ms="13327" started-at="2018-04-15T14:29:14Z" finished-at="2018-04-15T14:29:27Z">
+        <test-method status="PASS" signature="setUpbrowserFirst()[pri:0, instance:SundayPackage.MyTestNG@4493d195]" name="setUpbrowserFirst" is-config="true" duration-ms="6426" started-at="2018-04-16T05:31:25Z" finished-at="2018-04-16T05:31:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpbrowserFirst -->
-        <test-method status="PASS" signature="VerifyBankTitle()[pri:0, instance:SundayPackage.MyTestNG@4493d195]" name="VerifyBankTitle" duration-ms="52" started-at="2018-04-15T14:29:27Z" finished-at="2018-04-15T14:29:27Z">
+        <test-method status="PASS" signature="VerifyBankTitle()[pri:0, instance:SundayPackage.MyTestNG@4493d195]" name="VerifyBankTitle" duration-ms="19" started-at="2018-04-16T05:31:32Z" finished-at="2018-04-16T05:31:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyBankTitle -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:SundayPackage.MyTestNG@4493d195]" name="Login" duration-ms="1148" started-at="2018-04-15T14:29:27Z" finished-at="2018-04-15T14:29:28Z">
+        <test-method status="PASS" signature="Login()[pri:1, instance:SundayPackage.MyTestNG@4493d195]" name="Login" duration-ms="1291" started-at="2018-04-16T05:31:32Z" finished-at="2018-04-16T05:31:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="AddNewCustomer()[pri:2, instance:SundayPackage.MyTestNG@4493d195]" name="AddNewCustomer" duration-ms="6327" started-at="2018-04-15T14:29:28Z" finished-at="2018-04-15T14:29:34Z">
+        <test-method status="PASS" signature="AddNewCustomer()[pri:2, instance:SundayPackage.MyTestNG@4493d195]" name="AddNewCustomer" duration-ms="6411" started-at="2018-04-16T05:31:33Z" finished-at="2018-04-16T05:31:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddNewCustomer -->
-        <test-method status="PASS" signature="Quit()[pri:3, instance:SundayPackage.MyTestNG@4493d195]" name="Quit" duration-ms="5495" started-at="2018-04-15T14:29:34Z" finished-at="2018-04-15T14:29:40Z">
+        <test-method status="FAIL" signature="LogOut()[pri:3, instance:SundayPackage.MyTestNG@4493d195]" name="LogOut" duration-ms="5392" started-at="2018-04-16T05:31:39Z" finished-at="2018-04-16T05:31:45Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [http://www.demo.guru99.com/V4/index.phptt] but found [http://www.demo.guru99.com/V4/index.php]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [http://www.demo.guru99.com/V4/index.phptt] but found [http://www.demo.guru99.com/V4/index.php]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at SundayPackage.MyTestNG.LogOut(MyTestNG.java:87)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOut -->
+        <test-method status="PASS" signature="Quit()[pri:4, instance:SundayPackage.MyTestNG@4493d195]" name="Quit" duration-ms="285" started-at="2018-04-16T05:31:45Z" description="Closing the Browser" finished-at="2018-04-16T05:31:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Quit -->

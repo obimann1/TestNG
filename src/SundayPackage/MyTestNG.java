@@ -73,7 +73,7 @@ public class MyTestNG {
 	
 
 	@Test(priority=3)
-	public void Quit() throws InterruptedException{
+	public void LogOut() throws InterruptedException{
 		driver.navigate().back();
 		driver.findElement(By.xpath("//a[contains(text(),\"Log out\")]")).click();
 		Alert al =driver.switchTo().alert();
@@ -83,11 +83,16 @@ public class MyTestNG {
 		//al.dismiss();
 		Thread.sleep(4000);
 		String actualLogOutUrl = driver.getCurrentUrl();
-		String expectedLogOutUrl = "http://www.demo.guru99.com/V4/index.php";
+		String expectedLogOutUrl = "http://www.demo.guru99.com/V4/index.phptt";
 		Assert.assertEquals(actualLogOutUrl,expectedLogOutUrl);
 		System.out.println("Test Case 4 passed. User was able to successfully LogOut");
 	}
 	
-	
+	@Test(priority=4,description="Closing the Browser",enabled=true)
+	public void Quit(){
+		
+		driver.close();;
+		
+	}
 }
 
